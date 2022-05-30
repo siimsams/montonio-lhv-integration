@@ -11,14 +11,14 @@ list of their accounts in LHV. The front end may be written in any framework.
 
 # About the LHV open banking sandbox API:
 
-● General documentation: https://partners.lhv.ee/en/open-banking/
-● Swagger:
+* General documentation: https://partners.lhv.ee/en/open-banking/
+* Swagger:
 https://api.sandbox.lhv.eu/psd2/swagger-ui/index.html?configUrl=/psd2/documentation/a
 pi-docs/swagger-config
-● LHV Sandbox API base URL: https://api.sandbox.lhv.eu/psd2/v1
-● To use the API, you need client certificates. There is a link in the Swagger
+* LHV Sandbox API base URL: https://api.sandbox.lhv.eu/psd2/v1
+* To use the API, you need client certificates. There is a link in the Swagger
 documentation to generate those certificates.
-● Even though the Swagger documentation states that you can skip OAuth and just use
+* Even though the Swagger documentation states that you can skip OAuth and just use
 the token “Bearer Liis-MariMnnik”, don’t skip it and implement OAuth properly.
 Some notes
 To make requests to the API, you need a client ID, which you can extract from the certificates
