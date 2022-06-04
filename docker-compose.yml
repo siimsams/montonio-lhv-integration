@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+    dev:
+        container_name: lhv-integration-backend-dev
+        image: lhv-integration-backend-dev:1.0.0
+        build:
+            context: ./lhv-integration-backend
+            target: development
+        command: npm run start:debug
+        ports:
+            - 3000:3000
+            - 9229:9229
+        networks:
+            - nesjs-network
+        volumes:
+            - ./lhv-integration-backend:/usr/src/app
+            - /usr/src/app/node_modules
+        restart: unless-stopped
+        depends_on:
+            - frontend
+    prod:
+        container_name: lhv-integration-backend-prod
+        image: lhv-integration-backend-prod:1.0.0
+        build:
+            context: ./lhv-integration-backend
+            target: production
+        command: npm run start:prod
+        ports:
+            - 3000:3000
+            - 9229:9229
+        networks:
+            - nesjs-network
+        volumes:
+            - ./lhv-integration-backend:/usr/src/app
+            - /usr/src/app/node_modules
+        restart: unless-stopped
+        depends_on:
+            - frontend
+    frontend:
+        build: 
+            context: ./lhv-integration-frontend
+        ports: 
+            - 4200:80
+        networks:
+            - nesjs-network
+
+        
+    
+networks:
+    nesjs-network:
