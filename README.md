@@ -9,16 +9,16 @@ Rename empty.env to .env in lhv-integration-backend
 
 # Starting the application
 
-* Make sure you rename empty.env found in lhv-integration-backend/ to .env and fill out all the variables in it.
+Make sure you rename empty.env found in lhv-integration-backend/ to .env and fill out all the variables in it.
 
-* How to launch the containers:
-docker-compose up dev
-docker-compose up prod
+### How to launch the containers:  
+docker-compose up dev   
+docker-compose up prod  
 
-* Backend responds at:
+## Backend responds at:  
 http://localhost:3000/
 
-* Frontend responds at:
+## Frontend responds at:  
 http://localhost:4200/
 
 # montonio-lhv-integration
