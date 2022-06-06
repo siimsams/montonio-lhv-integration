@@ -3,7 +3,7 @@
 * Generate the cert here: https://api.sandbox.lhv.eu/psd2/ui/certificate-authority
 * Save certificate to: certificate.crt
 * Extract the subject: openssl x509 -noout -in certificate.crt -subject
-* 2.5.4.97=PSDEE-LHVTEST-..... ==> lhv_client_id=PSDEE-LHVTEST-.....
+* 2.5.4.97=PSDEE-LHVTEST-..... ==> LHV_CLIENT_ID=PSDEE-LHVTEST-.....
 
 Rename empty.env to .env in lhv-integration-backend
 
