@@ -1,24 +1,24 @@
 # Setting .env variables 
 
-Generate the cert here: https://api.sandbox.lhv.eu/psd2/ui/certificate-authority
-Save certificate to: certificate.crt
-Extract the subject: openssl x509 -noout -in certificate.crt -subject
-2.5.4.97=PSDEE-LHVTEST-..... ==> lhv_client_id=PSDEE-LHVTEST-.....
+* Generate the cert here: https://api.sandbox.lhv.eu/psd2/ui/certificate-authority
+* Save certificate to: certificate.crt
+* Extract the subject: openssl x509 -noout -in certificate.crt -subject
+* 2.5.4.97=PSDEE-LHVTEST-..... ==> lhv_client_id=PSDEE-LHVTEST-.....
 
 Rename empty.env to .env in lhv-integration-backend
 
 # Starting the application
 
-Make sure you rename empty.env found in lhv-integration-backend/ to .env and fill out all the variables in it.
+* Make sure you rename empty.env found in lhv-integration-backend/ to .env and fill out all the variables in it.
 
-How to launch the containers:
+* How to launch the containers:
 docker-compose up dev
 docker-compose up prod
 
-Backend responds at:
+* Backend responds at:
 http://localhost:3000/
 
-Frontend responds at:
+* Frontend responds at:
 http://localhost:4200/
 
 # montonio-lhv-integration
