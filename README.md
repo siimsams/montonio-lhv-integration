@@ -1,3 +1,20 @@
+# Service POST /oauth/token is broken?
+After extensive testing and reading the documentation over and over I still got 401 every time I queried that endpoint.
+
+How to replicate: 
+1. Complete flow here: https://api.sandbox.lhv.eu/psd2/oauth/authorize?scope=psd2&response_type=code&client_id=PSDEE-LHVTEST-c1dec9&redirect_uri=https://tppsystem.com/callback
+2. Add code from the redirect link to the next curl.
+3. curl --location --request POST 'https://api.sandbox.lhv.eu/psd2/oauth/token' \
+     --header 'Content-Type: application/x-www-form-urlencoded' \
+     --data-urlencode 'client_id=PSDEE-LHVTEST-c1dec9' \
+     --data-urlencode 'grant_type=authorization_code' \
+     --data-urlencode 'redirect_uri=https://tppsystem.com/callback' \
+     --data-urlencode 'code='
+
+![Screenshot 2022-06-07 at 23 58 46](https://user-images.githubusercontent.com/17649698/172482069-338c8412-a82b-4d22-8bc2-bdd41240271e.png)
+<img width="775" alt="Screenshot 2022-06-07 at 23 59 05" src="https://user-images.githubusercontent.com/17649698/172482085-7edd6405-8155-46dc-8c1f-5abcb064aaf7.png">
+
+
 # Setting .env variables 
 
 * Generate the cert here: https://api.sandbox.lhv.eu/psd2/ui/certificate-authority
