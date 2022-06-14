@@ -11,6 +11,9 @@ Rename empty.env to .env in lhv-integration-backend
 
 Make sure you rename empty.env found in lhv-integration-backend/ to .env and fill out all the empty variables in it.
 
+For chrome to accept the fake certificates use:
+https://stackoverflow.com/a/31900210
+
 ### How to launch the containers:  
 docker-compose up dev   
 docker-compose up prod  
