@@ -16,7 +16,7 @@ docker-compose up dev
 docker-compose up prod  
 
 ## Backend responds at:  
-http://localhost:3000/
+https://localhost:3000/
 
 ## Frontend responds at:  
 http://localhost:4200/
