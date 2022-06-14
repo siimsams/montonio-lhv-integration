@@ -7,7 +7,7 @@ services:
         build:
             context: ./lhv-integration-backend
             target: development
-        command: npm run start:debug
+        command: yarn run start:debug
         ports:
             - 3000:3000
             - 9229:9229
@@ -19,6 +19,7 @@ services:
         restart: unless-stopped
         depends_on:
             - frontend
+            - mongodb
     prod:
         container_name: lhv-integration-backend-prod
         image: lhv-integration-backend-prod:1.0.0
@@ -36,6 +37,7 @@ services:
         restart: unless-stopped
         depends_on:
             - frontend
+            - mongodb
     frontend:
         build: 
             context: ./lhv-integration-frontend
@@ -43,8 +45,14 @@ services:
             - 4200:80
         networks:
             - nesjs-network
-
-        
+    mongodb:
+        image: mongo:latest
+        ports:
+            - 27017:27017
+        volumes:
+            - ~/apps/mongo:/data/db
+        networks:
+            - nesjs-network
     
 networks:
     nesjs-network:

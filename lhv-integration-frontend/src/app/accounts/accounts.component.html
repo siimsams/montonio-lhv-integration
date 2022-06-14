@@ -1,0 +1,16 @@
+<div class="list-group list-group-checkable d-grid gap-2 border-0 w-auto">
+    <p>My accounts:</p>
+    <div *ngFor="let account of accounts; let i = index" (click)="indexExpanded=i">
+        <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios" [checked]="indexExpanded==i">
+        <label class="list-group-item rounded-3 py-3" [attr.for]="'istGroupCheckableRadios' + i">
+        {{account.iban}}
+        <span class="d-block small opacity-75">Name: {{account.name}}</span>
+        <div [hidden]="indexExpanded!=i">
+            <span class="d-block small opacity-75">Currency: {{account.currency}}</span>
+            <span class="d-block small opacity-75">Product name: {{account.product}}</span>
+            <span class="d-block small opacity-75">Account type: {{account.cashAccountType}}</span>
+            <span class="d-block small opacity-75">Account status: {{account.status}}</span>
+        </div>
+        </label>
+    </div>
+</div>
